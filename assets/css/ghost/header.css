@@ -1,0 +1,357 @@
+/* Global Header
+/* ---------------------------------------------------------- */
+
+.gh-head {
+    padding: var(--space-lg) var(--space-xl);
+    font-size: 1rem;
+    line-height: 1.5;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gh-head a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.gh-head-inner {
+    display: grid;
+    grid-gap: var(--space-lg);
+    grid-template-columns: 1fr auto 1fr;
+    grid-auto-flow: row dense;
+    align-items: center;
+    max-width: var(--container-wide);
+    margin: 0 auto;
+}
+
+/* Navigation Layout Variations */
+.is-head-left-logo .gh-head-inner {
+    grid-template-columns: auto 1fr auto;
+}
+
+.is-head-left-logo .gh-head-brand {
+    grid-column-start: 1;
+    justify-content: flex-start;
+}
+
+.is-head-left-logo .gh-head-menu {
+    justify-content: center;
+}
+
+.is-head-right-logo .gh-head-inner {
+    grid-template-columns: 1fr auto auto;
+}
+
+.is-head-right-logo .gh-head-brand {
+    grid-column-start: 3;
+    justify-content: flex-end;
+}
+
+.is-head-right-logo .gh-head-menu {
+    justify-content: flex-start;
+}
+
+.is-head-right-logo .gh-head-actions {
+    justify-content: center;
+}
+
+/* Brand
+/* ---------------------------------------------------------- */
+
+.gh-head-brand {
+    grid-column-start: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.gh-head-logo {
+    display: block;
+    padding: var(--space-sm) 0;
+    font-family: var(--font-sans);
+    font-weight: var(--font-bold);
+    font-size: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+}
+
+.gh-head-logo:hover {
+    color: var(--color-accent);
+}
+
+.gh-head-logo img {
+    max-height: 32px;
+}
+
+/* Mobile Menu Toggle */
+.gh-burger {
+    display: none;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.gh-burger-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.gh-burger-inner {
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.gh-burger-inner::before,
+.gh-burger-inner::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.gh-burger-inner::before {
+    top: 9px;
+}
+
+.gh-burger-inner::after {
+    bottom: 9px;
+}
+
+/* Active Burger State */
+.gh-head-open .gh-burger-inner {
+    background-color: transparent;
+}
+
+.gh-head-open .gh-burger-inner::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.gh-head-open .gh-burger-inner::after {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+/* Primary Navigation
+/* ---------------------------------------------------------- */
+
+.gh-head-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.gh-head-menu .nav {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-head-menu .nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.gh-head-menu .nav a {
+    display: inline-block;
+    padding: var(--space-xs) 0;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    position: relative;
+}
+
+.gh-head-menu .nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width var(--transition-fast);
+}
+
+.gh-head-menu .nav a:hover {
+    color: var(--color-text);
+}
+
+.gh-head-menu .nav a:hover::after {
+    width: 100%;
+}
+
+.gh-head-menu .nav-current a {
+    color: var(--color-text);
+}
+
+.gh-head-menu .nav-current a::after {
+    width: 100%;
+}
+
+/* Secondary Navigation / Actions
+/* ---------------------------------------------------------- */
+
+.gh-head-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    text-align: right;
+}
+
+.gh-head-actions-list {
+    display: inline-flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.gh-head-actions-list a:not([class]) {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-sm);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+}
+
+.gh-head-actions-list a:not([class]):hover {
+    color: var(--color-accent);
+}
+
+/* Search Icon */
+.gh-head-actions-list a svg {
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+}
+
+/* Theme Toggle Button */
+.gh-theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.gh-theme-toggle:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.gh-theme-toggle svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: currentColor;
+}
+
+.gh-theme-toggle .sun-icon {
+    display: none;
+}
+
+.gh-theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] .gh-theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .gh-theme-toggle .moon-icon {
+    display: none;
+}
+
+/* Responsive
+/* ---------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .gh-head {
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .gh-head-inner {
+        grid-template-columns: auto 1fr auto;
+        gap: var(--space-md);
+    }
+
+    .is-head-left-logo .gh-head-inner,
+    .is-head-right-logo .gh-head-inner {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .is-head-right-logo .gh-head-brand {
+        grid-column-start: 2;
+        justify-content: center;
+    }
+
+    .is-head-right-logo .gh-head-actions {
+        justify-content: flex-end;
+    }
+
+    .gh-head-brand {
+        grid-column-start: 1;
+        justify-content: flex-start;
+    }
+
+    .gh-burger {
+        display: block;
+        grid-column-start: 3;
+        justify-self: end;
+    }
+
+    .gh-head-menu,
+    .gh-head-actions {
+        display: none;
+    }
+
+    .gh-head-open .gh-head-menu {
+        display: flex;
+        grid-column: 1 / -1;
+        justify-content: center;
+        padding: var(--space-lg) 0;
+        border-top: 1px solid var(--color-border);
+        margin-top: var(--space-md);
+    }
+
+    .gh-head-open .gh-head-menu .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    .gh-head-open .gh-head-actions {
+        display: flex;
+        grid-column: 1 / -1;
+        justify-content: center;
+        padding-bottom: var(--space-lg);
+    }
+}

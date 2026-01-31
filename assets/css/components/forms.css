@@ -1,0 +1,85 @@
+/* Forms
+/* ---------------------------------------------------------- */
+
+.gh-input,
+.gh-textarea {
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border: solid 1px var(--color-border);
+    color: var(--color-text);
+    display: block;
+    outline: 0;
+    padding: 0 var(--space-md);
+    text-decoration: none;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+.gh-input:focus,
+.gh-textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+}
+
+.gh-select {
+    height: 4.4rem;
+    padding-right: 4.4rem;
+    text-overflow: ellipsis;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border: solid 1px var(--color-border);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.gh-select option {
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+.gh-select:focus {
+    border-color: var(--color-accent);
+    outline: none;
+}
+
+.gh-select::-ms-expand {
+    display: none;
+}
+
+.gh-input,
+.gh-select {
+    height: 4.4rem;
+}
+
+.gh-textarea {
+    padding: var(--space-md);
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Form Labels */
+.gh-form-group label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+}
+
+/* Form Validation States */
+.gh-input.is-error,
+.gh-textarea.is-error {
+    border-color: var(--color-accent);
+}
+
+.gh-form-error {
+    margin-top: var(--space-xs);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    color: var(--color-accent);
+}

@@ -1,0 +1,179 @@
+{{!< default}}
+
+{{#post}}
+
+<article class="gh-article {{post_class}}{{#match @custom.post_image_style "Full"}} image-full{{/match}}{{#match @custom.post_image_style "Small"}} image-small{{/match}}">
+
+    <header class="gh-header gh-canvas">
+
+        {{#if primary_tag}}
+            <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+        {{/if}}
+
+        <h1 class="gh-title">{{title}}</h1>
+
+        {{#if custom_excerpt}}
+            <p class="gh-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+
+        {{#if @custom.show_post_metadata}}
+            <div class="gh-article-meta">
+                <div class="gh-article-meta-content">
+                    {{#if @custom.show_author}}
+                        <span class="gh-article-author">{{authors}}</span>
+                    {{/if}}
+                    {{#if @custom.show_publish_date}}
+                        {{#if @custom.show_author}}<span class="bull">&bull;</span>{{/if}}
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                    {{/if}}
+                    {{#if @custom.show_reading_time}}
+                        {{#if @custom.show_author}}<span class="bull">&bull;</span>{{/if}}
+                        {{#if @custom.show_publish_date}}<span class="bull">&bull;</span>{{/if}}
+                        {{reading_time}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/if}}
+
+        {{#match @custom.post_image_style "Full"}}
+            {{#if feature_image}}
+            <figure class="gh-feature-image">
+                <picture>
+                  <source 
+                    srcset="
+                    {{img_url feature_image size="xxs" format="avif"}} 30w,
+                    {{img_url feature_image size="xs" format="avif"}} 100w,
+                    {{img_url feature_image size="s" format="avif"}} 300w,
+                    {{img_url feature_image size="m" format="avif"}} 600w,
+                    {{img_url feature_image size="l" format="avif"}} 1200w,
+                    {{img_url feature_image size="xl" format="avif"}} 2000w"
+                    sizes="(min-width: 1200px) 1200px, 90vw" 
+                    type="image/avif"
+                  >
+                  <source 
+                    srcset="
+                    {{img_url feature_image size="xxs" format="webp"}} 30w,
+                    {{img_url feature_image size="xs" format="webp"}} 100w,
+                    {{img_url feature_image size="s" format="webp"}} 300w,
+                    {{img_url feature_image size="m" format="webp"}} 600w,
+                    {{img_url feature_image size="l" format="webp"}} 1200w,
+                    {{img_url feature_image size="xl" format="webp"}} 2000w"
+                    sizes="(min-width: 1200px) 1200px, 90vw" 
+                    type="image/webp"
+                  >
+                  <img
+                    srcset="
+                    {{img_url feature_image size="xxs"}} 30w,
+                    {{img_url feature_image size="xs"}} 100w,
+                    {{img_url feature_image size="s"}} 300w,
+                    {{img_url feature_image size="m"}} 600w,
+                    {{img_url feature_image size="l"}} 1200w,
+                    {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(min-width: 1200px) 1200px, 90vw" 
+                    src="{{img_url feature_image size="l"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                  >
+                </picture>
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+            {{/if}}
+        {{else match @custom.post_image_style "Large"}}
+            {{#if feature_image}}
+            <figure class="gh-feature-image">
+                <picture>
+                  <source 
+                    srcset="
+                    {{img_url feature_image size="xxs" format="avif"}} 30w,
+                    {{img_url feature_image size="xs" format="avif"}} 100w,
+                    {{img_url feature_image size="s" format="avif"}} 300w,
+                    {{img_url feature_image size="m" format="avif"}} 600w,
+                    {{img_url feature_image size="l" format="avif"}} 1200w,
+                    {{img_url feature_image size="xl" format="avif"}} 2000w"
+                    sizes="(min-width: 1200px) 1200px, 90vw" 
+                    type="image/avif"
+                  >
+                  <source 
+                    srcset="
+                    {{img_url feature_image size="xxs" format="webp"}} 30w,
+                    {{img_url feature_image size="xs" format="webp"}} 100w,
+                    {{img_url feature_image size="s" format="webp"}} 300w,
+                    {{img_url feature_image size="m" format="webp"}} 600w,
+                    {{img_url feature_image size="l" format="webp"}} 1200w,
+                    {{img_url feature_image size="xl" format="webp"}} 2000w"
+                    sizes="(min-width: 1200px) 1200px, 90vw" 
+                    type="image/webp"
+                  >
+                  <img
+                    srcset="
+                    {{img_url feature_image size="xxs"}} 30w,
+                    {{img_url feature_image size="xs"}} 100w,
+                    {{img_url feature_image size="s"}} 300w,
+                    {{img_url feature_image size="m"}} 600w,
+                    {{img_url feature_image size="l"}} 1200w,
+                    {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(min-width: 1200px) 1200px, 90vw" 
+                    src="{{img_url feature_image size="l"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                  >
+                </picture>
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+            {{/if}}
+        {{/match}}
+
+    </header>
+
+    <div class="gh-content gh-canvas">
+        {{content}}
+    </div>
+
+    {{#if @custom.show_author_bio}}
+        <footer class="gh-footer gh-canvas">
+            <div class="gh-post-authors">
+                {{#foreach authors}}
+                    <div class="gh-author-bio">
+                        {{#if profile_image}}
+                            <img class="gh-author-bio-image" src="{{img_url profile_image size="s"}}" alt="{{name}}" />
+                        {{/if}}
+                        <div class="gh-author-bio-content">
+                            <h4 class="gh-author-bio-name"><a href="{{url}}">{{name}}</a></h4>
+                            {{#if bio}}
+                                <p class="gh-author-bio-text">{{bio}}</p>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/foreach}}
+            </div>
+
+            {{#if comments}}
+                <section class="gh-post-comments">
+                    {{comments}}
+                </section>
+            {{/if}}
+        </footer>
+    {{/if}}
+
+</article>
+
+{{#if @custom.show_related_articles}}
+    {{#get "posts" filter="id:-{{id}}" limit=@custom.related_articles_count as |more_posts|}}
+        {{#if more_posts}}
+            <aside class="gh-readmore">
+                <div class="gh-readmore-inner gh-container">
+                    <h3 class="gh-readmore-title">Read more</h3>
+                    <div class="gh-readmore-grid">
+                        {{#foreach more_posts}}
+                            {{> "card"}}
+                        {{/foreach}}
+                    </div>
+                </div>
+            </aside>
+        {{/if}}
+    {{/get}}
+{{/if}}
+
+{{/post}}

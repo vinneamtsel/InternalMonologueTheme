@@ -1,0 +1,34 @@
+/* Ghost Badge
+/* ---------------------------------------------------------- */
+
+a.gh-powered,
+a.gh-powered:hover {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px 6px 8px;
+    border: none;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: -0.2px;
+    font-family: var(--font-sans);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    color: var(--color-text);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 0 1px var(--color-border);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+a.gh-powered:hover {
+    background: var(--color-bg-secondary);
+    box-shadow: 0 0 0 1px var(--color-accent);
+    color: var(--color-accent);
+}
+
+a.gh-powered svg {
+    height: 16px;
+    width: 16px;
+    margin: 0 6px 0 0;
+}

@@ -1,0 +1,386 @@
+/* Content Grid & Typography
+/* ---------------------------------------------------------- */
+
+.gh-canvas,
+.kg-width-full.kg-content-wide {
+    --gap: 4vw;
+    --main: min(var(--content-width, 680px), 100% - var(--gap) * 2);
+    --wide: minmax(0, calc((var(--container-wide, 1200px) - var(--content-width, 680px)) / 2));
+    --full: minmax(var(--gap), 1fr);
+
+    display: grid;
+    grid-template-columns:
+        [full-start] var(--full)
+        [wide-start] var(--wide)
+        [main-start] var(--main) [main-end]
+        var(--wide) [wide-end]
+        var(--full) [full-end];
+}
+
+.gh-canvas > * {
+    grid-column: main-start / main-end;
+}
+
+.kg-width-wide,
+.kg-content-wide > div {
+    grid-column: wide-start / wide-end;
+}
+
+.kg-width-full {
+    grid-column: full-start / full-end;
+}
+
+.kg-width-full img {
+    width: 100%;
+}
+
+/* Content Spacing
+/* ---------------------------------------------------------- */
+
+.gh-content > * + * {
+    margin-top: var(--space-xl);
+}
+
+.gh-content > [id]:not(:first-child) {
+    margin-top: var(--space-2xl);
+}
+
+.gh-content > [id] + * {
+    margin-top: var(--space-lg);
+}
+
+.gh-content [id] + .kg-card,
+.gh-content blockquote + .kg-card {
+    margin-top: var(--space-2xl);
+}
+
+/* Typography
+/* ---------------------------------------------------------- */
+
+.gh-canvas > blockquote,
+.gh-canvas > ol,
+.gh-canvas > ul,
+.gh-canvas > dl,
+.gh-canvas > p {
+    font-family: var(--font-serif);
+    font-weight: var(--font-normal);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text);
+}
+
+.gh-content > ul,
+.gh-content > ol,
+.gh-content > dl {
+    padding-left: 1.5em;
+}
+
+.gh-content li + li {
+    margin-top: var(--space-xs);
+}
+
+.gh-content hr {
+    margin: var(--space-3xl) 0;
+    border: 0;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.gh-content hr + * {
+    margin-top: var(--space-3xl) !important;
+}
+
+/* Blockquotes
+/* ---------------------------------------------------------- */
+
+.gh-content blockquote {
+    position: relative;
+    font-style: italic;
+    padding-left: var(--space-xl);
+    border-left: 3px solid var(--color-accent);
+    color: var(--color-text-secondary);
+}
+
+.gh-content blockquote p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.gh-content blockquote p:first-child {
+    margin-top: 0;
+}
+
+.gh-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links in Content
+/* ---------------------------------------------------------- */
+
+.gh-content a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+}
+
+.gh-content a:hover {
+    text-decoration-thickness: 2px;
+}
+
+/* Headings in Content
+/* ---------------------------------------------------------- */
+
+.gh-content h2 {
+    font-size: 1.75rem;
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-3xl);
+}
+
+.gh-content h3 {
+    font-size: 1.5rem;
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-2xl);
+}
+
+.gh-content h4 {
+    font-size: 1.25rem;
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-xl);
+}
+
+/* Code
+/* ---------------------------------------------------------- */
+
+.gh-content code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent);
+}
+
+.gh-content pre {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: var(--space-lg);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+
+.gh-content pre code {
+    padding: 0;
+    background: transparent;
+    color: inherit;
+}
+
+/* Images & Figures
+/* ---------------------------------------------------------- */
+
+.gh-content figure {
+    margin: var(--space-2xl) 0;
+}
+
+.gh-content figcaption {
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+    margin-top: var(--space-sm);
+}
+
+/* Tables
+/* ---------------------------------------------------------- */
+
+.gh-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+}
+
+.gh-content th,
+.gh-content td {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.gh-content th {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-secondary);
+    border-bottom-width: 2px;
+}
+
+/* Ghost Cards - Gallery
+/* ---------------------------------------------------------- */
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    margin: var(--space-xl) 0;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin-top: var(--space-sm);
+}
+
+.kg-gallery-image {
+    flex: 1 1 0%;
+    position: relative;
+}
+
+.kg-gallery-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kg-gallery-row:not(:first-of-type) .kg-gallery-image:not(:first-of-type) {
+    margin-left: var(--space-sm);
+}
+
+/* Ghost Cards - Bookmark
+/* ---------------------------------------------------------- */
+
+.kg-bookmark-card {
+    margin: var(--space-xl) 0;
+}
+
+.kg-bookmark-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    color: inherit;
+    text-decoration: none;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+}
+
+.kg-bookmark-container:hover {
+    border-color: var(--color-accent);
+}
+
+.kg-bookmark-content {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
+    padding: var(--space-lg);
+}
+
+.kg-bookmark-title {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+    line-height: 1.4;
+    color: var(--color-text);
+}
+
+.kg-bookmark-description {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.kg-bookmark-metadata {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    color: var(--color-text-tertiary);
+}
+
+.kg-bookmark-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-sm);
+}
+
+.kg-bookmark-author {
+    font-weight: var(--font-medium);
+}
+
+.kg-bookmark-author:after {
+    content: "•";
+    margin-left: var(--space-xs);
+}
+
+.kg-bookmark-publisher {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.kg-bookmark-thumbnail {
+    flex-basis: 15rem;
+    flex-grow: 1;
+    position: relative;
+}
+
+.kg-bookmark-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive
+/* ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .gh-canvas > blockquote,
+    .gh-canvas > ol,
+    .gh-canvas > ul,
+    .gh-canvas > dl,
+    .gh-canvas > p {
+        font-size: 1.7rem;
+    }
+
+    .gh-content blockquote {
+        padding-left: var(--space-lg);
+    }
+
+    .gh-content blockquote p {
+        font-size: 1.9rem;
+    }
+
+    .gh-content h2 {
+        font-size: 2.4rem;
+    }
+
+    .gh-content h3 {
+        font-size: 2rem;
+    }
+
+    .kg-bookmark-container {
+        flex-direction: column;
+    }
+
+    .kg-bookmark-thumbnail {
+        flex-basis: auto;
+        min-height: 16rem;
+    }
+}

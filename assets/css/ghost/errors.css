@@ -1,0 +1,87 @@
+/* Error Templates
+/* ---------------------------------------------------------- */
+
+.gh-error {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-3xl) var(--space-lg);
+}
+
+.gh-error-content {
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+.gh-error-code {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 12rem;
+    font-weight: var(--font-bold);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: var(--color-accent);
+}
+
+.gh-error-description {
+    max-width: 500px;
+    margin: var(--space-md) auto 0;
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.gh-error-link {
+    display: inline-block;
+    margin-top: var(--space-xl);
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: var(--font-medium);
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.gh-error-link:hover {
+    text-decoration-thickness: 2px;
+}
+
+.gh-error-stack {
+    max-width: 600px;
+    margin: var(--space-2xl) auto 0;
+    padding: var(--space-xl);
+    text-align: left;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    overflow-x: auto;
+}
+
+.gh-error-stack-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.gh-error-stack-list > li {
+    margin: var(--space-xs) 0;
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gh-error-stack-list > li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .gh-error-code {
+        font-size: 8rem;
+    }
+
+    .gh-error-description {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,119 @@
+/* Buttons
+/* ---------------------------------------------------------- */
+
+.gh-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    min-width: 100px;
+    height: 4.4rem;
+    padding: 0 var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: var(--font-medium);
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+}
+
+.gh-button:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background-color: transparent;
+}
+
+.gh-button:active {
+    transform: translateY(1px);
+}
+
+.gh-button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Primary Button */
+.gh-button-primary {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+}
+
+.gh-button-primary:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+/* Accent Button */
+.gh-button-accent {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+}
+
+.gh-button-accent:hover {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+    color: #ffffff;
+}
+
+/* Small Button */
+.gh-button-small {
+    height: 3.6rem;
+    padding: 0 var(--space-md);
+    font-size: 0.8125rem;
+}
+
+/* Large Button */
+.gh-button-large {
+    height: 5.2rem;
+    padding: 0 var(--space-xl);
+    font-size: 1rem;
+}
+
+/* Ghost Button (Text only) */
+.gh-button-ghost {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.gh-button-ghost:hover {
+    background-color: var(--color-bg-secondary);
+}
+
+/* Disabled Button */
+.gh-button:disabled,
+.gh-button-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Full Width Button */
+.gh-button-fit {
+    width: 100%;
+}
+
+/* Icon Button */
+.gh-button-icon {
+    width: 4.4rem;
+    min-width: auto;
+    padding: 0;
+}
+
+.gh-button-icon.gh-button-small {
+    width: 3.6rem;
+}
+
+.gh-button-icon svg {
+    width: 2rem;
+    height: 2rem;
+}
