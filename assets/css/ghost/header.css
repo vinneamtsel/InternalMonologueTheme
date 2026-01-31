@@ -39,7 +39,7 @@
 }
 
 .is-head-right-logo .gh-head-inner {
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
 }
 
 .is-head-right-logo .gh-head-brand {
@@ -48,11 +48,13 @@
 }
 
 .is-head-right-logo .gh-head-menu {
-    justify-content: flex-start;
+    grid-column-start: 2;
+    justify-content: center;
 }
 
 .is-head-right-logo .gh-head-actions {
-    justify-content: center;
+    grid-column-start: 1;
+    justify-content: flex-start;
 }
 
 /* Brand

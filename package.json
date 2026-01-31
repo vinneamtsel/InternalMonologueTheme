@@ -100,29 +100,19 @@
                 "type": "select",
                 "options": [
                     "Logo on the left",
-                    "Logo in the middle"
+                    "Logo in the middle",
+                    "Logo on the right"
                 ],
                 "default": "Logo in the middle"
             },
-            "title_font": {
-                "type": "select",
-                "options": [
-                    "Serif",
-                    "Sans-serif"
-                ],
-                "default": "Sans-serif"
-            },
-            "body_font": {
-                "type": "select",
-                "options": [
-                    "Serif",
-                    "Sans-serif"
-                ],
-                "default": "Serif"
-            },
-            "show_publication_cover": {
+            "show_site_title": {
                 "type": "boolean",
-                "default": false,
+                "default": true,
+                "group": "homepage"
+            },
+            "show_site_description": {
+                "type": "boolean",
+                "default": true,
                 "group": "homepage"
             },
             "header_style": {
@@ -130,9 +120,40 @@
                 "options": [
                     "Center aligned",
                     "Left aligned",
+                    "Right aligned",
                     "Minimal"
                 ],
                 "default": "Minimal",
+                "group": "homepage"
+            },
+            "header_height": {
+                "type": "select",
+                "options": [
+                    "Small",
+                    "Medium",
+                    "Large"
+                ],
+                "default": "Medium",
+                "group": "homepage"
+            },
+            "header_background": {
+                "type": "select",
+                "options": [
+                    "Transparent",
+                    "Solid color",
+                    "Publication cover"
+                ],
+                "default": "Transparent",
+                "group": "homepage"
+            },
+            "header_background_color": {
+                "type": "color",
+                "default": "#000000",
+                "group": "homepage"
+            },
+            "header_text_color": {
+                "type": "color",
+                "default": "#000000",
                 "group": "homepage"
             },
             "post_feed_layout": {

@@ -1,29 +1,69 @@
 {{!< default}}
 
 {{!-- Homepage Header based on header_style setting --}}
-{{#match @custom.header_style "!=" "Minimal"}}
-<div class="gh-page-head{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#if @custom.show_publication_cover}}{{#if @site.cover_image}} has-cover{{/if}}{{/if}}">
-    {{#if @custom.show_publication_cover}}
+{{#match @custom.header_style "Center aligned"}}
+<div class="gh-page-head{{#match @custom.header_height "Small"}} height-small{{/match}}{{#match @custom.header_height "Large"}} height-large{{/match}}{{#match @custom.header_background "Publication cover"}}{{#if @site.cover_image}} has-cover{{/if}}{{/match}}{{#match @custom.header_background "Solid color"}} has-solid-bg{{/match}}{{#unless @custom.show_site_title}}{{#unless @custom.show_site_description}} no-content{{/unless}}{{/unless}}"{{#match @custom.header_background "Solid color"}} style="background-color: {{@custom.header_background_color}};"{{/match}}>
+    {{#match @custom.header_background "Publication cover"}}
         {{#if @site.cover_image}}
             <img class="gh-page-cover" src="{{img_url @site.cover_image size="xl"}}" alt="{{@site.title}}" />
         {{/if}}
-    {{/if}}
-    <div class="gh-page-head-content">
-        {{#match @custom.header_style "Center aligned"}}
+    {{/match}}
+    <div class="gh-page-head-content" style="color: {{@custom.header_text_color}};">
+        {{#if @custom.show_site_title}}
             {{#if @site.logo}}
                 <img class="gh-site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
             {{else}}
-                <h1 class="gh-site-title">{{@site.title}}</h1>
+                <h1 class="gh-site-title" style="color: {{@custom.header_text_color}};">{{@site.title}}</h1>
             {{/if}}
-        {{else match @custom.header_style "Left aligned"}}
+        {{/if}}
+        {{#if @custom.show_site_description}}
+            {{#if @site.description}}
+                <p class="gh-site-description" style="color: {{@custom.header_text_color}};">{{@site.description}}</p>
+            {{/if}}
+        {{/if}}
+    </div>
+</div>
+{{else match @custom.header_style "Left aligned"}}
+<div class="gh-page-head left-aligned{{#match @custom.header_height "Small"}} height-small{{/match}}{{#match @custom.header_height "Large"}} height-large{{/match}}{{#match @custom.header_background "Publication cover"}}{{#if @site.cover_image}} has-cover{{/if}}{{/match}}{{#match @custom.header_background "Solid color"}} has-solid-bg{{/match}}{{#unless @custom.show_site_title}}{{#unless @custom.show_site_description}} no-content{{/unless}}{{/unless}}"{{#match @custom.header_background "Solid color"}} style="background-color: {{@custom.header_background_color}};"{{/match}}>
+    {{#match @custom.header_background "Publication cover"}}
+        {{#if @site.cover_image}}
+            <img class="gh-page-cover" src="{{img_url @site.cover_image size="xl"}}" alt="{{@site.title}}" />
+        {{/if}}
+    {{/match}}
+    <div class="gh-page-head-content" style="color: {{@custom.header_text_color}};">
+        {{#if @custom.show_site_title}}
             {{#if @site.logo}}
                 <img class="gh-site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
             {{else}}
-                <h1 class="gh-site-title">{{@site.title}}</h1>
+                <h1 class="gh-site-title" style="color: {{@custom.header_text_color}};">{{@site.title}}</h1>
             {{/if}}
-        {{/match}}
-        {{#if @site.description}}
-            <p class="gh-site-description">{{@site.description}}</p>
+        {{/if}}
+        {{#if @custom.show_site_description}}
+            {{#if @site.description}}
+                <p class="gh-site-description" style="color: {{@custom.header_text_color}};">{{@site.description}}</p>
+            {{/if}}
+        {{/if}}
+    </div>
+</div>
+{{else match @custom.header_style "Right aligned"}}
+<div class="gh-page-head right-aligned{{#match @custom.header_height "Small"}} height-small{{/match}}{{#match @custom.header_height "Large"}} height-large{{/match}}{{#match @custom.header_background "Publication cover"}}{{#if @site.cover_image}} has-cover{{/if}}{{/match}}{{#match @custom.header_background "Solid color"}} has-solid-bg{{/match}}{{#unless @custom.show_site_title}}{{#unless @custom.show_site_description}} no-content{{/unless}}{{/unless}}"{{#match @custom.header_background "Solid color"}} style="background-color: {{@custom.header_background_color}};"{{/match}}>
+    {{#match @custom.header_background "Publication cover"}}
+        {{#if @site.cover_image}}
+            <img class="gh-page-cover" src="{{img_url @site.cover_image size="xl"}}" alt="{{@site.title}}" />
+        {{/if}}
+    {{/match}}
+    <div class="gh-page-head-content" style="color: {{@custom.header_text_color}};">
+        {{#if @custom.show_site_title}}
+            {{#if @site.logo}}
+                <img class="gh-site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
+            {{else}}
+                <h1 class="gh-site-title" style="color: {{@custom.header_text_color}};">{{@site.title}}</h1>
+            {{/if}}
+        {{/if}}
+        {{#if @custom.show_site_description}}
+            {{#if @site.description}}
+                <p class="gh-site-description" style="color: {{@custom.header_text_color}};">{{@site.description}}</p>
+            {{/if}}
         {{/if}}
     </div>
 </div>
@@ -52,5 +92,6 @@
                 {{pagination}}
             </div>
         </noscript>
+
     </div>
 </div>
