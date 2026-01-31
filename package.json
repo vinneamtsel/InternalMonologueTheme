@@ -2,7 +2,7 @@
     "name": "internal-monologue",
     "description": "A minimalist zen editorial Ghost theme with dark/light mode toggle",
     "demo": "https://internal-monologue.ghost.io",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
