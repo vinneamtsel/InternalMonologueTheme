@@ -8,17 +8,17 @@ A minimalist zen editorial Ghost theme with dark/light mode support.
 
 ## Key Features
 
-🎨 **Minimalist Zen Editorial Design** - Clean typography with generous whitespace for focused reading
+- **Minimalist Zen Editorial Design** - Clean typography with generous whitespace for focused reading
 
-🌓 **Dark/Light Theme Toggle** - Seamless switching between dark and light modes with system preference detection
+- **Dark/Light Theme Toggle** - Seamless switching between dark and light modes with system preference detection
 
-⚫⚪🔴 **Color Scheme** - Black, white, and minimal red accent colors for a sophisticated look
+- **Color Scheme** - Black, white, and minimal red accent colors for a sophisticated look
 
-📱 **Fully Responsive** - Optimized for all devices from mobile to desktop
+- **Fully Responsive** - Optimized for all devices from mobile to desktop
 
-⚡ **Fast Performance** - Built with Rollup for optimized asset compilation
+- **Fast Performance** - Built with Rollup for optimized asset compilation
 
-✅ **Ghost Compliant** - Passes gscan validation with no errors
+- **Ghost Compliant** - Passes gscan validation with no errors
 
 ## Theme Settings
 
