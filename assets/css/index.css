@@ -438,6 +438,16 @@ html,
     color: var(--color-text-secondary);
 }
 
+/* Content Excerpt - inside gh-content, aligned left like content */
+.gh-content-excerpt {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    text-align: left;
+}
+
 .gh-feature-image {
     grid-column: wide-start / wide-end;
     width: 100%;
@@ -540,7 +550,7 @@ html,
     display: inline-block;
     margin-bottom: var(--space-md);
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: var(--font-medium);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -555,6 +565,14 @@ html,
 .image-full .gh-feature-image {
     grid-column: full-start / full-end;
     border-radius: 0;
+}
+
+.image-large .gh-feature-image {
+    grid-column: wide-start / wide-end;
+}
+
+.image-mid .gh-feature-image {
+    grid-column: main-start / main-end;
 }
 
 .image-small .gh-feature-image {

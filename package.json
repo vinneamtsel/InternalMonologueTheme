@@ -172,11 +172,12 @@
             "post_image_style": {
                 "type": "select",
                 "options": [
-                    "Wide",
+                    "Large",
                     "Full",
+                    "Mid",
                     "Small"
                 ],
-                "default": "Wide",
+                "default": "Large",
                 "group": "post"
             },
             "show_post_metadata": {
