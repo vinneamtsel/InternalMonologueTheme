@@ -75,7 +75,9 @@
         {{#match @custom.post_feed_layout "List"}}
             <div class="gh-postfeed is-list">
         {{else match @custom.post_feed_layout "Grid"}}
-            <div class="gh-postfeed is-grid">
+            <div class="gh-postfeed is-grid{{#match @custom.grid_columns "3 columns"}} is-grid-3{{/match}}{{#match @custom.grid_columns "4 columns"}} is-grid-4{{/match}}{{#match @custom.grid_gap "Small"}} gap-small{{/match}}{{#match @custom.grid_gap "Large"}} gap-large{{/match}}">
+        {{else match @custom.post_feed_layout "Minimal"}}
+            <div class="gh-postfeed is-minimal">
         {{else}}
             <div class="gh-postfeed is-classic">
         {{/match}}

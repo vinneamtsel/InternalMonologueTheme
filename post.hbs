@@ -18,13 +18,10 @@
                     {{#if @custom.show_publish_date}}
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                     {{/if}}
-                    {{#if @custom.show_author}}
-                        {{#if @custom.show_publish_date}}<span class="bull">&bull;</span>{{/if}}
-                        <span class="gh-article-author">{{authors}}</span>
-                    {{/if}}
+                    {{#if @custom.show_publish_date}}<span class="bull">&bull;</span>{{/if}}
+                    <span class="gh-article-author">{{authors}}</span>
                     {{#if @custom.show_reading_time}}
-                        {{#if @custom.show_publish_date}}<span class="bull">&bull;</span>{{/if}}
-                        {{#if @custom.show_author}}<span class="bull">&bull;</span>{{/if}}
+                        <span class="bull">&bull;</span>
                         {{reading_time}}
                     {{/if}}
                 </div>
